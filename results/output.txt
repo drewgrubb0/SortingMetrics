@@ -1,0 +1,2 @@
+BubbleSort: 6.926 
+Selection Sort: 2.508 
