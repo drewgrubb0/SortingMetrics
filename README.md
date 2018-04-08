@@ -22,5 +22,5 @@ I have no real deadline or schedule for this project, but intend to complete it 
 - [ ] Counting Sort
 
 ### My Links:
-- [LinkedIn](linkedin.com/in/drew-grubb)
+- [LinkedIn](https://linkedin.com/in/drew-grubb)
 - [GitHub](https://github.com/drewgrubb0)
