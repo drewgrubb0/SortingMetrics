@@ -113,17 +113,56 @@ void selectionSort(int* arrayPtr, size_t length)
  */
 void shellSort(int* arrayPtr, size_t length)
 {
+	for(int split = length / 2 ; split > 0 ; split/=2)
+	{
+		for(int x = split; x < length ; x++)
+		{
+			int temp = arrayPtr[x];
+			int y;
+			
+			for(y = x ; y >= split && arrayPtr[y - split] > temp ; y++
+			    arrayPtr[y] = arrayPtr[y - split];
+			arrayPtr[y] = temp;
+		}
 
+	}
 }
 
 /*
- * A sorting algorithm that
- *
- * Best case : O(n^2)
+ * A sorting algorithm that traverses through the array and swaps out of place values, similar to the bubble sort.
+ * However, the sort then traverses through the array backwards, performing the same swaps of out of order values.This is
+ * faster than bubble sort because the method places numbers that are far away from their correct position faster.
+ * 
+ * Best case : O(n)
  * Worst case : O(n^2)
  * Average case : O(n^2)
  */
 void cocktailSort(int* arrayPtr, size_t length)
 {
-
+	bool hasSwapped = false;
+	int ending = 1;
+	
+	while(hasSwapped)
+	{	
+		hasSwapped = false;
+		
+		for(int x = 0 ; x < length - ending ; x++)
+			if(arrayPtr[x] > arrayPtr[x+1])
+			{
+				swap(&arrayPtr[x], &arrayPtr[x+1]);
+				hasSwapped = true;
+			}
+		
+		if(!hasSwapped)
+			break;
+		hasSwapped = false;
+		ending++;
+		
+		for(int x = length - ending ; x > 0 ; x--)
+			if(arrayPtr[x] > arrayPtr[x+1])
+			{
+				swap(&arrayPtr[x], &arrayPtr[x+1]);
+				hasSwapped = true;
+			}
+	}
 }
