@@ -105,7 +105,9 @@ void selectionSort(int* arrayPtr, size_t length)
 }
 
 /*
- * A sorting algorithm that
+ * A sorting algorithm that splits the array and creates subsets based off the split,
+ * sorting the subset arrays using a modified insertion sort.
+ * Reduces the gap size with each iteration until the gap == 0 IE the array is sorted.
  *
  * Best case : O(n^2)
  * Worst case : O(n^2)
@@ -120,7 +122,7 @@ void shellSort(int* arrayPtr, size_t length)
 			int temp = arrayPtr[x];
 			int y;
 			
-			for(y = x ; y >= split && arrayPtr[y - split] > temp ; y++
+			for(y = x ; y >= split && arrayPtr[y - split] > temp ; y-=split)
 			    arrayPtr[y] = arrayPtr[y - split];
 			arrayPtr[y] = temp;
 		}
@@ -154,7 +156,7 @@ void cocktailSort(int* arrayPtr, size_t length)
 			}
 		
 		if(!hasSwapped)
-			break;
+			return;
 		hasSwapped = false;
 		ending++;
 		
