@@ -57,6 +57,30 @@ void bubbleSort(int* arrayPtr, size_t length)
 }
 
 /*
+ * A sorting algorithm that sorts the array as elements are found/added.
+ * Places the found element in its designated position relative to the sorted elements before it
+ *
+ * Best case : O(n^2)
+ * Worst case : O(n^2)
+ * Average case : O(n^2)
+ */
+void insertionSort(int* arrayPtr, size_t length)
+{
+	int currentValue, y;
+	for(int x = 1 ; x < length ; x++)
+	{
+		currentValue = arrayPtr[x];
+
+		for(y = x-1 ; y >= 0 && arrayPtr[y] > currentValue ; y--)
+		{
+			arrayPtr[y+1] = arrayPtr[y];
+		}
+
+		arrayPtr[y+1] = currentValue;
+	}
+}
+
+/*
  * A sorting algorithm that puts the minimum element within the unsorted portion of the array
  * at the beginning of that unsorted portion until the array is sorted.
  *
@@ -78,4 +102,28 @@ void selectionSort(int* arrayPtr, size_t length)
 		}
 		swap(&arrayPtr[x], &arrayPtr[min]);
 	}
+}
+
+/*
+ * A sorting algorithm that
+ *
+ * Best case : O(n^2)
+ * Worst case : O(n^2)
+ * Average case : O(n^2)
+ */
+void shellSort(int* arrayPtr, size_t length)
+{
+
+}
+
+/*
+ * A sorting algorithm that
+ *
+ * Best case : O(n^2)
+ * Worst case : O(n^2)
+ * Average case : O(n^2)
+ */
+void cocktailSort(int* arrayPtr, size_t length)
+{
+
 }

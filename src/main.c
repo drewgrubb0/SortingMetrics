@@ -16,7 +16,7 @@
 
 #include "SimpleSorts.h"
 
-#define ARRAY_LENGTH 50000
+#define ARRAY_LENGTH 100000
 #define ARRAY_SIZE (sizeof(numArray) / sizeof(numArray[0]))
 
 /*
@@ -38,6 +38,10 @@ int main()
 	timeSpent = getTimeSpentOnSort(numArray, ARRAY_SIZE, &selectionSort);
 	printf("Selection Sort: %.3f \n", timeSpent);
 	memcpy(numArray,  arrayCopy, sizeof(numArray));
+
+	timeSpent = getTimeSpentOnSort(numArray, ARRAY_SIZE, &insertionSort);
+	printf("Insertion Sort: %.3f \n", timeSpent);
+	memcpy(numArray,  arrayCopy, sizeof(numArray));
 }
 
 /*
@@ -53,17 +57,6 @@ void populateArray(int* arrayPtr, size_t length)
 }
 
 /*
- * Prints the given array (via pointer) using printf
- * from index 0 to size-1
- */
-void printArray(int* arrayPtr, size_t length)
-{
-	for(size_t x = 0 ; x < length ; x++)
-		printf("[%d] ", arrayPtr[x]);
-	printf("\n");
-}
-
-/*
  * Performs the sort function given and returns the amount
  * of time spent on that sort in (double) seconds to the millionths place.
  */
@@ -75,5 +68,16 @@ double getTimeSpentOnSort(int* arrayPtr, size_t length, void (*funcPtr)(int*, si
 	funcPtr(arrayPtr, length);
 	end = clock();
 	return ((double) (end - start)) / CLOCKS_PER_SEC;
+}
+
+/*
+ * Prints the given array (via pointer) using printf
+ * from index 0 to size-1
+ */
+void printArray(int* arrayPtr, size_t length)
+{
+	for(size_t x = 0 ; x < length ; x++)
+		printf("[%d] ", arrayPtr[x]);
+	printf("\n");
 }
 

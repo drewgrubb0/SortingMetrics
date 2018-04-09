@@ -16,5 +16,8 @@ void swap(int* v1, int* v2);
 
 void bubbleSort(int* arrayPtr, size_t length);
 void selectionSort(int* arrayPtr, size_t length);
+void insertionSort(int* arrayPtr, size_t length);
+void shellSort(int* arrayPtr, size_t length);
+void cocktailSort(int* arrayPtr, size_t length);
 
 #endif /* SORTS_H_ */
