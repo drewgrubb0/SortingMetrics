@@ -11,8 +11,10 @@
 #ifndef MAIN_H_
 #define MAIN_H_
 
-void populateArray(int* arrayPtr, size_t length);
-void printArray(int* arrayPtr, size_t length);
-double getTimeSpentOnSort(int* arrayPtr, size_t length, void(*funcPtr)(int*, size_t));
+void populateArray();
+void printArray(int* arrayPtr);
+double getTimeSpentOnSort(int* arrayPtr, void(*funcPtr)(int*, size_t));
+void copyArray(int* dest, int* src);
+void isSorted(int* arrayPtr);
 
 #endif /* MAIN_H_ */

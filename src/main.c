@@ -13,71 +13,118 @@
 #include <string.h>
 
 #include "main.h"
-
 #include "SimpleSorts.h"
 
-#define ARRAY_LENGTH 100000
 #define ARRAY_SIZE (sizeof(numArray) / sizeof(numArray[0]))
+
+/*Global variable because only one size is used*/
+static int arrayLength;
 
 /*
  * Driver for the program
  */
 int main()
 {
-	int numArray[ARRAY_LENGTH];
-	int arrayCopy[ARRAY_LENGTH];
+	setbuf(stdout, NULL);
+	printf("Please input the size of the Array to measure: ");
+	scanf("%d", &arrayLength);
+
+	printf("Running performance metric with array length %d...\n\n", arrayLength);
+
+	int numArray[arrayLength];
+	int arrayCopy[arrayLength];
+	double timeSpentOnBubble;
 	double timeSpent;
 
-	populateArray(numArray, ARRAY_SIZE);
-	memcpy(arrayCopy, numArray, sizeof(arrayCopy));
+	populateArray(numArray);
+	copyArray(arrayCopy, numArray);
 
-	timeSpent = getTimeSpentOnSort(numArray, ARRAY_SIZE, &bubbleSort);
-	printf("BubbleSort: %.3f \n", timeSpent);
-	memcpy(numArray, arrayCopy, sizeof(numArray));
+	timeSpentOnBubble = getTimeSpentOnSort(numArray, &bubbleSort);
+	printf("%-20s %.3f | ", "Bubble Sort: ", timeSpentOnBubble);
+	printf("1x\n");
+	copyArray(numArray, arrayCopy);
 
-	timeSpent = getTimeSpentOnSort(numArray, ARRAY_SIZE, &selectionSort);
-	printf("Selection Sort: %.3f \n", timeSpent);
-	memcpy(numArray,  arrayCopy, sizeof(numArray));
+	timeSpent = getTimeSpentOnSort(numArray, &cocktailSort);
+	printf("%-20s %.3f | ", "Cocktail Sort: ", timeSpent);
+	printf("%f Speedup on Bubble Sort\n", (timeSpentOnBubble / timeSpent));
+	copyArray(numArray, arrayCopy);
 
-	timeSpent = getTimeSpentOnSort(numArray, ARRAY_SIZE, &insertionSort);
-	printf("Insertion Sort: %.3f \n", timeSpent);
-	memcpy(numArray,  arrayCopy, sizeof(numArray));
+	timeSpent = getTimeSpentOnSort(numArray, &selectionSort);
+	printf("%-20s %.3f | ", "Selection Sort: ", timeSpent);
+	printf("%f Speedup on Bubble Sort\n", (timeSpentOnBubble / timeSpent));
+	copyArray(numArray, arrayCopy);
+
+	timeSpent = getTimeSpentOnSort(numArray, &insertionSort);
+	printf("%-20s %.3f | ", "Insertion Sort: ", timeSpent);
+	printf("%f Speedup on Bubble Sort\n", (timeSpentOnBubble / timeSpent));
+	copyArray(numArray, arrayCopy);
+
+	timeSpent = getTimeSpentOnSort(numArray, &shellSort);
+	printf("%-20s %.3f | ", "Shell Sort: ", timeSpent);
+	printf("%f Speedup on Bubble Sort\n", (timeSpentOnBubble / timeSpent));
+	copyArray(numArray, arrayCopy);
 }
 
 /*
  * Fills the given array (via pointer) with random integer values
- * using srand() and time()
+ * using srand() and time().
  */
-void populateArray(int* arrayPtr, size_t length)
+void populateArray(int* arrayPtr)
 {
 	srand(time(NULL));
 
-	for(size_t x = 0 ; x < length ; x++)
+	for(size_t x = 0 ; x < arrayLength ; x++)
 		arrayPtr[x] = rand();
 }
 
 /*
  * Performs the sort function given and returns the amount
- * of time spent on that sort in (double) seconds to the millionths place.
+ * of time spent on that sort in (double) seconds to the thousandths place.
  */
-double getTimeSpentOnSort(int* arrayPtr, size_t length, void (*funcPtr)(int*, size_t))
+double getTimeSpentOnSort(int* arrayPtr, void (*funcPtr)(int*, size_t))
 {
 	clock_t start, end;
 
 	start = clock();
-	funcPtr(arrayPtr, length);
+	funcPtr(arrayPtr, arrayLength);
 	end = clock();
 	return ((double) (end - start)) / CLOCKS_PER_SEC;
 }
 
 /*
- * Prints the given array (via pointer) using printf
- * from index 0 to size-1
+ * Uses memcpy to copy 2 arrays.
+ * Created to improve the readability flow of the program.
  */
-void printArray(int* arrayPtr, size_t length)
+void copyArray(int* dest, int* src)
 {
-	for(size_t x = 0 ; x < length ; x++)
+	memcpy(dest, src, arrayLength * sizeof(int));
+}
+
+//TESTING FUNCTIONS
+
+/*
+ * Prints the given array (via pointer) using printf
+ * from index 0 to size-1.
+ * Used for testing.
+ */
+void printArray(int* arrayPtr)
+{
+	for(size_t x = 0 ; x < arrayLength ; x++)
 		printf("[%d] ", arrayPtr[x]);
 	printf("\n");
 }
 
+/*
+ * prints whether or not the given array is incrementally sorted.
+ * Used for testing.
+ */
+void isSorted(int* arrayPtr)
+{
+	for(int x = 0 ; x < arrayLength - 1 ; x++)
+		if(arrayPtr[x] > arrayPtr[x+1])
+		{
+			printf("This array is not sorted\n");
+			return;
+		}
+	printf("This array is sorted :)\n");
+}
