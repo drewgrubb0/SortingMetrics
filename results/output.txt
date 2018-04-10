@@ -6,3 +6,13 @@ Cocktail Sort:       20.776 | 1.368695 Speedup on Bubble Sort
 Selection Sort:      10.081 | 2.820752 Speedup on Bubble Sort
 Insertion Sort:      5.323 | 5.342100 Speedup on Bubble Sort
 Shell Sort:          0.023 | 1236.347826 Speedup on Bubble Sort
+
+------------------------------------------------------------------------------
+
+Please input the size of the Array to measure: 250000
+Running performance metric with array length 250000...
+Bubble Sort:         178.821 | 1x
+Cocktail Sort:       129.653 | 1.379228 Speedup on Bubble Sort
+Selection Sort:      62.620 | 2.855653 Speedup on Bubble Sort
+Insertion Sort:      33.200 | 5.386175 Speedup on Bubble Sort
+Shell Sort:          0.049 | 3649.408163 Speedup on Bubble Sort
