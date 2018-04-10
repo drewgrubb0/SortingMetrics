@@ -1,2 +1,8 @@
-BubbleSort: 6.926 
-Selection Sort: 2.508 
+Please input the size of the Array to measure: 100000
+Running performance metric with array length 100000...
+
+Bubble Sort:         28.436 | 1x
+Cocktail Sort:       20.776 | 1.368695 Speedup on Bubble Sort
+Selection Sort:      10.081 | 2.820752 Speedup on Bubble Sort
+Insertion Sort:      5.323 | 5.342100 Speedup on Bubble Sort
+Shell Sort:          0.023 | 1236.347826 Speedup on Bubble Sort
