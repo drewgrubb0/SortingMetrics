@@ -22,8 +22,8 @@
 void countingSort(int* arrayPtr, size_t length)
 {
 	//RAND_MAX
-	int max = 32767;
-	int counts[max] = {0};
+	int max = 32768;
+	static int counts[32768];
 
 	for(int x = 0 ; x < length ; x++)
 		counts[arrayPtr[x]]++;
@@ -33,7 +33,6 @@ void countingSort(int* arrayPtr, size_t length)
 	for(int x = 0 ; x < max ; x++)
 	{
 		int numberOfIndex = counts[x];
-		
 		for(int y = 0 ; y < numberOfIndex ; y++)
 		{
 			arrayPtr[currentIndex] = x;

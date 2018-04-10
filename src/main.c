@@ -46,7 +46,7 @@ int main()
 	printf("1x\n");
 	copyArray(numArray, arrayCopy);
 
-/*	timeSpent = getTimeSpentOnSort(numArray, &cocktailSort);
+	timeSpent = getTimeSpentOnSort(numArray, &cocktailSort);
 	printf("%-20s %.3f | ", "Cocktail Sort: ", timeSpent);
 	printf("%f Speedup on Bubble Sort\n", (timeSpentOnBubble / timeSpent));
 	copyArray(numArray, arrayCopy);
@@ -64,7 +64,7 @@ int main()
 	timeSpent = getTimeSpentOnSort(numArray, &shellSort);
 	printf("%-20s %.3f | ", "Shell Sort: ", timeSpent);
 	printf("%f Speedup on Bubble Sort\n", (timeSpentOnBubble / timeSpent));
-	copyArray(numArray, arrayCopy);*/
+	copyArray(numArray, arrayCopy);
 
 	timeSpent = getTimeSpentOnSort(numArray, &countingSort);
 	printf("%-20s %.3f | ", "Counting Sort: ", timeSpent);
@@ -133,7 +133,7 @@ void isSorted(int* arrayPtr)
 	for(int x = 0 ; x < arrayLength - 1 ; x++)
 		if(arrayPtr[x] > arrayPtr[x+1])
 		{
-			printf("This array is not sorted - Val %d\n", arrayPtr[x]);
+			printf("This array is not sorted - [%d] = Val %d\n", x, arrayPtr[x]);
 			return;
 		}
 	printf("This array is sorted :)\n");
