@@ -8,9 +8,10 @@
  */
 #include <stdlib.h>
 
-#ifndef MERGESORT_H_
-#define MERGESORT_H_
+#ifndef RADIXSORT_H_
+#define RADIXSORT_H_
 
-void RadixSort(int* arrayPtr, size_t length);
+void radixSort(int* arrayPtr, size_t length);
+int getMaxNumber(int* arrayPtr, size_t length);
 
-#endif /* MERGESORT_H_ */
+#endif /* RADIXSORT_H_ */

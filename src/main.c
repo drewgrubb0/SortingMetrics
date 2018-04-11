@@ -13,9 +13,12 @@
 #include <string.h>
 
 #include "main.h"
-
-#include "ComplexSorts/CountingSort.h"
 #include "SimpleSorts.h"
+#include "ComplexSorts/CountingSort.h"
+#include "ComplexSorts/RadixSort.h"
+#include "ComplexSorts/MergeSort.h"
+#include "ComplexSorts/QuickSort.h"
+#include "ComplexSorts/HeapSort.h"
 
 #define ARRAY_SIZE (sizeof(numArray) / sizeof(numArray[0]))
 
@@ -66,12 +69,14 @@ int main()
 	printf("%f Speedup on Bubble Sort\n", (timeSpentOnBubble / timeSpent));
 	copyArray(numArray, arrayCopy);
 
+	timeSpent = getTimeSpentOnSort(numArray, &radixSort);
+	printf("%-20s %.3f | ", "Radix Sort: ", timeSpent);
+	printf("%f Speedup on Bubble Sort\n", (timeSpentOnBubble / timeSpent));
+	copyArray(numArray, arrayCopy);
+
 	timeSpent = getTimeSpentOnSort(numArray, &countingSort);
 	printf("%-20s %.3f | ", "Counting Sort: ", timeSpent);
 	printf("%f Speedup on Bubble Sort\n", (timeSpentOnBubble / timeSpent));
-
-	isSorted(numArray);
-
 	copyArray(numArray, arrayCopy);
 }
 
