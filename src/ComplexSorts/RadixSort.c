@@ -38,6 +38,9 @@ void radixSort(int* arrayPtr, size_t length)
 	}
 }
 
+/*
+ * Gets the largest number in the given array
+ */
 int getMaxNumber(int* arrayPtr, size_t length)
 {
 	int max = arrayPtr[0];

@@ -15,7 +15,7 @@
  *
  * Not as efficient when the size of the array is less than the range input given.
  *
- * Best Case: (n)
+ * Best Case: O(n)
  * Worst Case: O(n)
  * Average Case: O(n)
  */

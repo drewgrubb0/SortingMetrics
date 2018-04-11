@@ -69,6 +69,12 @@ int main()
 	printf("%f Speedup on Bubble Sort\n", (timeSpentOnBubble / timeSpent));
 	copyArray(numArray, arrayCopy);
 
+	timeSpent = getTimeSpentOnSort(numArray, &mergeSort);
+	printf("%-20s %.3f | ", "Merge Sort: ", timeSpent);
+	printf("%f Speedup on Bubble Sort\n", (timeSpentOnBubble / timeSpent));
+	isSorted(numArray);
+	copyArray(numArray, arrayCopy);
+
 	timeSpent = getTimeSpentOnSort(numArray, &radixSort);
 	printf("%-20s %.3f | ", "Radix Sort: ", timeSpent);
 	printf("%f Speedup on Bubble Sort\n", (timeSpentOnBubble / timeSpent));

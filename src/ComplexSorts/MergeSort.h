@@ -12,6 +12,7 @@
 #define MERGESORT_H_
 
 void mergeSort(int* arrayPtr, size_t length);
+void sort(int* arrayPtr, int left, int right);
 void merge(int* arrayPtr, int left, int middle, int right);
 
 #endif /* MERGESORT_H_ */
