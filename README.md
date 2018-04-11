@@ -9,17 +9,17 @@ I have no real deadline or schedule for this project, but intend to complete it 
 
 #### Simple Sorts (Will likely all be in the same file):
 - [x] Bubble Sort
-- [ ] Insertion Sort
+- [x] Insertion Sort
 - [x] Selection Sort
-- [ ] Shell Sort
-- [ ] Cocktail Sort
+- [x] Shell Sort
+- [x] Cocktail Sort
 
 #### Advanced Sorts (Will likely have their own files):
 - [ ] Merge Sort
 - [ ] Quick Sort
 - [ ] Heap Sort
-- [ ] Radix Sort
-- [ ] Counting Sort
+- [x] Radix Sort
+- [x] Counting Sort
 
 ### My Links:
 - [LinkedIn](https://linkedin.com/in/drew-grubb)
