@@ -25,7 +25,7 @@ static int test;
  */
 void mergeSort(int* arrayPtr, size_t length)
 {
-	tempArray = calloc(length, sizeof(int) * length);
+	tempArray = calloc(length, sizeof(int));
 	sort(arrayPtr, 0, length - 1);
 	free(tempArray);
 }
