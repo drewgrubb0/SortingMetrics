@@ -1,18 +1,100 @@
+Different trials separated by dashed lines
+---------------------------------------------------------------------------
+
+Please input the size of the Array to measure: 12500
+Running performance metric with array length 12500...
+
+Bubble Sort:         0.376s | 1x
+Cocktail Sort:       0.297s | 1.265993 Speedup on Bubble Sort
+Selection Sort:      0.163s | 2.306748 Speedup on Bubble Sort
+Insertion Sort:      0.079s | 4.759494 Speedup on Bubble Sort
+
+Shell Sort:          0.000s | 1.#INF00 Speedup on Bubble Sort
+Heap Sort:           0.000s | 1.#INF00 Speedup on Bubble Sort
+Merge Sort:          0.000s | 1.#INF00 Speedup on Bubble Sort
+Quick Sort:          0.000s | 1.#INF00 Speedup on Bubble Sort
+Radix Sort:          0.000s | 1.#INF00 Speedup on Bubble Sort
+Counting Sort:       0.000s | 1.#INF00 Speedup on Bubble Sort
+
+---------------------------------------------------------------------------
+
+Please input the size of the Array to measure: 50000
+Running performance metric with array length 50000...
+
+Bubble Sort:         6.993s | 1x
+Cocktail Sort:       5.186s | 1.348438 Speedup on Bubble Sort
+Selection Sort:      2.505s | 2.791617 Speedup on Bubble Sort
+Insertion Sort:      1.304s | 5.362730 Speedup on Bubble Sort
+
+Shell Sort:          0.001s | 6993.000000 Speedup on Bubble Sort
+Heap Sort:           0.016s | 437.062500 Speedup on Bubble Sort
+Merge Sort:          0.000s | 1.#INF00 Speedup on Bubble Sort
+Quick Sort:          0.016s | 437.062500 Speedup on Bubble Sort
+Radix Sort:          0.000s | 1.#INF00 Speedup on Bubble Sort
+Counting Sort:       0.000s | 1.#INF00 Speedup on Bubble Sort
+
+---------------------------------------------------------------------------
+
 Please input the size of the Array to measure: 100000
 Running performance metric with array length 100000...
 
-Bubble Sort:         28.436 | 1x
-Cocktail Sort:       20.776 | 1.368695 Speedup on Bubble Sort
-Selection Sort:      10.081 | 2.820752 Speedup on Bubble Sort
-Insertion Sort:      5.323 | 5.342100 Speedup on Bubble Sort
-Shell Sort:          0.023 | 1236.347826 Speedup on Bubble Sort
+Bubble Sort:         29.142s | 1x
+Cocktail Sort:       20.961s | 1.390296 Speedup on Bubble Sort
+Selection Sort:      10.067s | 2.894805 Speedup on Bubble Sort
+Insertion Sort:      5.316s | 5.481941 Speedup on Bubble Sort
 
-------------------------------------------------------------------------------
+Shell Sort:          0.020s | 1457.100000 Speedup on Bubble Sort
+Heap Sort:           0.016s | 1821.375000 Speedup on Bubble Sort
+Merge Sort:          0.016s | 1821.375000 Speedup on Bubble Sort
+Quick Sort:          0.023s | 1267.043478 Speedup on Bubble Sort
+Radix Sort:          0.000s | 1.#INF00 Speedup on Bubble Sort
+Counting Sort:       0.000s | 1.#INF00 Speedup on Bubble Sort
+
+---------------------------------------------------------------------------
 
 Please input the size of the Array to measure: 250000
 Running performance metric with array length 250000...
-Bubble Sort:         178.821 | 1x
-Cocktail Sort:       129.653 | 1.379228 Speedup on Bubble Sort
-Selection Sort:      62.620 | 2.855653 Speedup on Bubble Sort
-Insertion Sort:      33.200 | 5.386175 Speedup on Bubble Sort
-Shell Sort:          0.049 | 3649.408163 Speedup on Bubble Sort
+
+Bubble Sort:         181.049s | 1x
+Cocktail Sort:       130.828s | 1.383870 Speedup on Bubble Sort
+Selection Sort:      62.553s | 2.894330 Speedup on Bubble Sort
+Insertion Sort:      33.089s | 5.471577 Speedup on Bubble Sort
+
+Shell Sort:          0.048s | 3771.854167 Speedup on Bubble Sort
+Heap Sort:           0.062s | 2920.145161 Speedup on Bubble Sort
+Merge Sort:          0.047s | 3852.106383 Speedup on Bubble Sort
+Quick Sort:          0.031s | 5840.290323 Speedup on Bubble Sort
+Radix Sort:          0.032s | 5657.781250 Speedup on Bubble Sort
+Counting Sort:       0.000s | 1.#INF00 Speedup on Bubble Sort
+
+---------------------------------------------------------------------------
+
+Please input the size of the Array to measure: 300000
+Running performance metric with array length 300000...
+
+Bubble Sort:         262.501s | 1x
+Cocktail Sort:       188.910s | 1.389556 Speedup on Bubble Sort
+Selection Sort:      90.907s | 2.887577 Speedup on Bubble Sort
+Insertion Sort:      47.709s | 5.502127 Speedup on Bubble Sort
+
+Shell Sort:          0.074s | 3547.310811 Speedup on Bubble Sort
+Heap Sort:           0.077s | 3409.103896 Speedup on Bubble Sort
+Merge Sort:          0.049s | 5357.163265 Speedup on Bubble Sort
+Quick Sort:          0.045s | 5833.355556 Speedup on Bubble Sort
+Radix Sort:          0.023s | 11413.086957 Speedup on Bubble Sort
+Counting Sort:       0.002s | 131250.500000 Speedup on Bubble Sort
+
+---------------------------------------------------------------------------
+
+Worth noting that I ran just the "fast" arrays with 5,000,000 values on the heap
+to see what would happen:
+
+Please input the size of the Array to measure: 5000000
+Running performance metric with array length 5000000...
+
+Shell Sort: 1.896s
+Heap Sort: 1.867s
+Merge Sort: 0.915s
+Quick Sort: 2.361s
+Radix Sort: 0.387s
+Counting Sort: 0.015s
