@@ -1,4 +1,20 @@
 # SortingMetrics
+And this project is done!
+This project was very interesting for me because I learned a lot about different sorting algorithms, their implementations, and when to use them!
+
+A couple things that stood out to me:
+- All of the quick algorithms were much faster than I anticipated on large number sequences
+- Shell sort was much faster than I expected
+- Heap sort was slower than I expected
+- Counting sort is a monster I didn't expect (but looking back on it makes sense because it's almost similar to a hashmap)
+
+Things I want to do with this in the future:
+- [ ] Port it over to an Object Oriented Language (most likely C++) to create a cleaner main method and make it even easier to implement new algorithms.
+- [ ] Add more customizable features in said port such as running individual sorts, running specific groups, or rerunning sorts.
+- [ ] Add more things to keep track of (#Comparisons, #Swaps, Sort specific stats).
+- [ ] Possibly take advantage of Linux Perf to look even further as to specific sorting statistics 
+
+--------------------------------------------------------------------------------------------------------------------------------
 Hello There!
 
 This is a personal project where I will be implementing a large variety of sorting algorithms in a program and measuring their execution times.
@@ -15,9 +31,9 @@ I have no real deadline or schedule for this project, but intend to complete it 
 - [x] Cocktail Sort
 
 #### Advanced Sorts (Will likely have their own files):
-- [ ] Merge Sort
-- [ ] Quick Sort
-- [ ] Heap Sort
+- [x] Merge Sort
+- [x] Quick Sort
+- [x] Heap Sort
 - [x] Radix Sort
 - [x] Counting Sort
 
