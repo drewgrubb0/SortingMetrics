@@ -10,7 +10,6 @@
 #include <stdio.h>
 
 static int* tempArray;
-static int test;
 
 /*
  * A sorting algorithm that recursively sorts an array by using a
@@ -57,28 +56,21 @@ void merge(int* arrayPtr, int left, int middle, int right)
 	int rightIndex = middle + 1;
 	int tempIndex = 0;
 
-	printf("test1: %d\n", test++);
 	while(leftIndex <= middle && rightIndex <= right)
 	{
 		if(arrayPtr[leftIndex] <= arrayPtr[rightIndex])
 		{
-			printf("test1.1: %d\n", leftIndex);
 			tempArray[tempIndex] = arrayPtr[leftIndex];
 			tempIndex++;
 			leftIndex++;
-			printf("test1.1.1: %d\n", test++);
 		}
 		else
 		{
-			printf("test1.2: %d\n", test++);
 			tempArray[tempIndex] = arrayPtr[rightIndex];
 			tempIndex++;
 			rightIndex++;
-			printf("test1.2.1: %d\n", test++);
 		}
 	}
-
-	printf("test2: %d\n", test++);
 
 	while(leftIndex <= middle)
 	{
@@ -96,5 +88,4 @@ void merge(int* arrayPtr, int left, int middle, int right)
 
 	for(int x = 0, y = left ; y <= right ; x++, y++)
 		arrayPtr[y] = tempArray[x];
-	printf("test3: %d\n", test++);
 }

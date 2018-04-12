@@ -36,8 +36,8 @@ int main()
 
 	printf("Running performance metric with array length %d...\n\n", arrayLength);
 
-	int numArray[arrayLength];
-	int arrayCopy[arrayLength];
+	int* numArray = malloc(arrayLength * sizeof(int));
+	int* arrayCopy = malloc(arrayLength * sizeof(int));
 	double timeSpentOnBubble;
 	double timeSpent;
 
@@ -45,43 +45,52 @@ int main()
 	copyArray(arrayCopy, numArray);
 
 	timeSpentOnBubble = getTimeSpentOnSort(numArray, &bubbleSort);
-	printf("%-20s %.3f | ", "Bubble Sort: ", timeSpentOnBubble);
+	printf("%-20s %.3fs | ", "Bubble Sort: ", timeSpentOnBubble);
 	printf("1x\n");
 	copyArray(numArray, arrayCopy);
 
 	timeSpent = getTimeSpentOnSort(numArray, &cocktailSort);
-	printf("%-20s %.3f | ", "Cocktail Sort: ", timeSpent);
+	printf("%-20s %.3fs | ", "Cocktail Sort: ", timeSpent);
 	printf("%f Speedup on Bubble Sort\n", (timeSpentOnBubble / timeSpent));
 	copyArray(numArray, arrayCopy);
 
 	timeSpent = getTimeSpentOnSort(numArray, &selectionSort);
-	printf("%-20s %.3f | ", "Selection Sort: ", timeSpent);
+	printf("%-20s %.3fs | ", "Selection Sort: ", timeSpent);
 	printf("%f Speedup on Bubble Sort\n", (timeSpentOnBubble / timeSpent));
 	copyArray(numArray, arrayCopy);
 
 	timeSpent = getTimeSpentOnSort(numArray, &insertionSort);
-	printf("%-20s %.3f | ", "Insertion Sort: ", timeSpent);
-	printf("%f Speedup on Bubble Sort\n", (timeSpentOnBubble / timeSpent));
+	printf("%-20s %.3fs | ", "Insertion Sort: ", timeSpent);
+	printf("%f Speedup on Bubble Sort\n\n", (timeSpentOnBubble / timeSpent));
 	copyArray(numArray, arrayCopy);
 
 	timeSpent = getTimeSpentOnSort(numArray, &shellSort);
-	printf("%-20s %.3f | ", "Shell Sort: ", timeSpent);
+	printf("%-20s %.3fs | ", "Shell Sort: ", timeSpent);
+	printf("%f Speedup on Bubble Sort\n", (timeSpentOnBubble / timeSpent));
+	copyArray(numArray, arrayCopy);
+
+	timeSpent = getTimeSpentOnSort(numArray, &heapSort);
+	printf("%-20s %.3fs | ", "Heap Sort: ", timeSpent);
 	printf("%f Speedup on Bubble Sort\n", (timeSpentOnBubble / timeSpent));
 	copyArray(numArray, arrayCopy);
 
 	timeSpent = getTimeSpentOnSort(numArray, &mergeSort);
-	printf("%-20s %.3f | ", "Merge Sort: ", timeSpent);
+	printf("%-20s %.3fs | ", "Merge Sort: ", timeSpent);
 	printf("%f Speedup on Bubble Sort\n", (timeSpentOnBubble / timeSpent));
-	isSorted(numArray);
+	copyArray(numArray, arrayCopy);
+
+	timeSpent = getTimeSpentOnSort(numArray, &quickSort);
+	printf("%-20s %.3fs | ", "Quick Sort: ", timeSpent);
+	printf("%f Speedup on Bubble Sort\n", (timeSpentOnBubble / timeSpent));
 	copyArray(numArray, arrayCopy);
 
 	timeSpent = getTimeSpentOnSort(numArray, &radixSort);
-	printf("%-20s %.3f | ", "Radix Sort: ", timeSpent);
+	printf("%-20s %.3fs | ", "Radix Sort: ", timeSpent);
 	printf("%f Speedup on Bubble Sort\n", (timeSpentOnBubble / timeSpent));
 	copyArray(numArray, arrayCopy);
 
 	timeSpent = getTimeSpentOnSort(numArray, &countingSort);
-	printf("%-20s %.3f | ", "Counting Sort: ", timeSpent);
+	printf("%-20s %.3fs | ", "Counting Sort: ", timeSpent);
 	printf("%f Speedup on Bubble Sort\n", (timeSpentOnBubble / timeSpent));
 	copyArray(numArray, arrayCopy);
 }

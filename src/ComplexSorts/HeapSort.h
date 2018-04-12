@@ -13,5 +13,6 @@
 
 void heapSort(int* arrayPtr, size_t length);
 void heap(int* arrayPtr, int heapSize, int root);
+void swaph(int* v1, int* v2);
 
 #endif /* HEAPSORT_H_ */
