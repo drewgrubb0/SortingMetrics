@@ -40,3 +40,24 @@ I have no real deadline or schedule for this project, but intend to complete it 
 ### My Links:
 - [LinkedIn](https://linkedin.com/in/drew-grubb)
 - [GitHub](https://github.com/drewgrubb0)
+
+#### Info on System:
+- Architecture:          x86_64
+- CPU op-mode(s):        32-bit, 64-bit
+- Byte Order:            Little Endian
+- CPU(s):                4
+- On-line CPU(s) list:   0-3
+- Thread(s) per core:    1
+- Core(s) per socket:    4
+- Socket(s):             1
+- Vendor ID:             GenuineIntel
+- CPU family:            6
+- Model:                 94
+- Model name:            Intel(R) Core(TM) i5-6600K CPU @ 3.50GHz
+- Stepping:              3
+- CPU MHz:               3501.000
+- CPU max MHz:           3501.0000
+- BogoMIPS:              7002.00
+- Virtualization:        VT-x
+- Hypervisor vendor:     vertical
+- Virtualization type:   full
