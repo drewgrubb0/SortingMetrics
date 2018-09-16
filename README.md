@@ -38,6 +38,7 @@ I have no real deadline or schedule for this project, but intend to complete it 
 - [x] Counting Sort
 
 ### My Links:
+- [Portfolio](http://www.drewgrubb.com)
 - [LinkedIn](https://linkedin.com/in/drew-grubb)
 - [GitHub](https://github.com/drewgrubb0)
 
